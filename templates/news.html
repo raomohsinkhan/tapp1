@@ -18,8 +18,11 @@
                 <td>{{ mydest.id }}</td>
                 <td>{{ mydest.fname }} {{ mydest.lname }}</td>
                 <td>{{ mydest.address }} {{ mydest.city }} {{ mydest.country }}</td>
-                <td>{{ mydest.gender }}</td>
-
+                {% if mydest.gender %}
+                <td>Male</td>
+                {% else %}
+                <td>Female</td>
+                {% endif %}
             </tr>
             {% endfor %}
         </table>

@@ -14,4 +14,4 @@ class Customers(models.Model):
 	city =models.CharField(max_length=100)
 	country =models.CharField(max_length=100)
 	age = models.IntegerField(default=0)
-	gender = models.BooleanField(default=False) #0 = Male, 1=Female
+	gender = models.BooleanField(default=False) #0 = Female, 1=Male
