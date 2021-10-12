@@ -9,14 +9,14 @@ def home(request):
 	return render(request,'abc.html',{"title":"Home"})
 
 def ci(request):
-	return render(request,'ci.html',{"title":"News"})
+	return render(request,'ci.html',{"title":"Customers"})
 
 def pi(request):
 	return render(request,'pi.html',{"title":"Products"})
 
 def t1(request):
 	dests = Customers.objects.all()
-	return render(request,'news.html',{"title":"News", "dests":dests})
+	return render(request,'news.html',{"title":"Customers", "dests":dests})
 
 
 def products(request):
@@ -58,7 +58,7 @@ def saveci(request):
 	c1.gender = gender
 	c1.save()
 	dests = Customers.objects.all()
-	return render(request,'news.html',{"title":"News", "dests":dests})
+	return render(request,'news.html',{"title":"Customers", "dests":dests})
 
 def add(request):
 	return render(request,'about.html',{"title":"Add"})
