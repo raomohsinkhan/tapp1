@@ -1,0 +1,1 @@
+web: gunicorn tapp1.wsgi 
