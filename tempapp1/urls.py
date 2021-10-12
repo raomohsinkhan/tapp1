@@ -12,4 +12,7 @@ urlpatterns = [
     path('subtract', views.subtract,name='subtract'),
     path('divide', views.divide,name='divide'),
     path('multiplay', views.multiplay,name='multiplay'),
+    path('ci', views.ci,name='ci'),
+    path('saveci', views.saveci,name='saveci'),
+    path('products', views.products,name='products'),
 ]

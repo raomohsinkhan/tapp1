@@ -15,3 +15,11 @@ class Customers(models.Model):
 	country =models.CharField(max_length=100)
 	age = models.IntegerField(default=0)
 	gender = models.BooleanField(default=False) #0 = Female, 1=Male
+
+
+class Products(models.Model):
+	pname = models.CharField(max_length=100)
+	unitprice = models.IntegerField(default=0)
+	added = models.DateTimeField(auto_now_add=True)
+
+

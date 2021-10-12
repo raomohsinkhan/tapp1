@@ -3,31 +3,26 @@
 
 {% block content %}
     <article>
-        <h1>This is a Center Section.</h1>
-        <h1>Customer Information</h1>
+        <h1>Product Information</h1>
         <hr>
         <table>
             <tr>
                 <th>ID</th>
                 <th>Name</th>
-                <th>Address</th>
-                <th>Gender</th>
+                <th>Unit Price</th>
+                <th>Added</th>
             </tr>
             {% for mydest in dests %}
             <tr>
                 <td>{{ mydest.id }}</td>
-                <td>{{ mydest.fname }} {{ mydest.lname }}</td>
-                <td>{{ mydest.address }} {{ mydest.city }} {{ mydest.country }}</td>
-                {% if mydest.gender %}
-                <td>Male</td>
-                {% else %}
-                <td>Female</td>
-                {% endif %}
+                <td>{{ mydest.pname }} </td>
+                <td>{{ mydest.unitprice }} </td>
+                <td>{{ mydest.added }}</td> 
             </tr>
             {% endfor %}
         </table>
         <h3></h3>
-        <a href="ci"><h3>Insert Customer Information</h3></a>
+        <a href="ci"><h3>Insert Product Information</h3></a>
 
 
 
