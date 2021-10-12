@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>{{ title }}</title>
+
+
+
+    <script>
+      function changelit(mytext){
+        myindex = 0;
+        const pArray = document.getElementsByClassName("topnav");
+        allas = pArray[0].getElementsByTagName("a")
+        //for debuggin start code
+        //tt = allas[1].innerText
+        //for debuggin end code
+        for(let myindex = 0; myindex < allas.length; myindex++){
+            if(allas[myindex].innerText.includes(mytext)){
+                allas[myindex].className ="active"
+                break;
+            }
+            else {
+                //do class name none for others
+                allas[myindex].className =""
+            }
+        }
+        //for debuggin start code
+        //document.write("<h1>changelit is called with argument " + mytext);
+        //for debuggin end code
+      }
+      function getIndexes(){
+        const pArray = document.getElementsByClassName("indexedParagraph");
+        for(let index = 0; index < pArray.length; index++){
+          pArray[index].innerText = "My index is: " + index;
+          pArray[index].style.background="green"
+          pArray[index].style.color="white"
+          pArray[index].style.fontSize='63px'
+        }
+      }
+      function abc(myindex){
+        const pArray = document.getElementsByClassName("indexedParagraph");
+        if(pArray[myindex].style.background.includes("blue")){
+            pArray[myindex].style.background="green"
+            pArray[myindex].style.color="black"
+        }
+        else{
+            pArray[myindex].style.background="blue"
+            pArray[myindex].style.color="white"
+        }
+      }
+    </script>
+  
+    <style>
+  *{
+  box-sizing: border-box; 
+  margin: 0;
+  padding: 0;
+  }
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+#main {
+  display: flex;
+  flex: 1;
+}
+#main > article {
+  flex: 1;
+}
+#main > nav, 
+#main > aside {
+  flex: 0 0 20vw;
+  background: rgb(227, 12, 235);
+}
+#main > nav {
+  order: -1;
+}
+header {
+  background: rgb(20, 237, 245);
+  height: 12vh;
+}
+footer {
+  background: rgb(236, 13, 80);
+}
+header, footer, article, nav, aside {
+  padding: 1em;
+}
+    
+    .topnav {
+      overflow: hidden;
+      background-color: rgb(251, 255, 12);
+    }
+    
+    .topnav a {
+      float: left;
+      color: #000000;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+      font-size: 20px;
+    }
+
+    .indexedParagraph {
+      cursor: pointer;
+      font-size: 20px;
+      background-color: "green";
+    }
+    
+    .topnav a:hover {
+      background-color: rgb(162, 18, 230);
+      color: rgb(248, 244, 9);
+      font-size: 20px;
+    }
+    
+    .topnav a.active {
+      background-color: rgb(162, 18, 230);
+      color: white;
+    }
+    </style>
+  </head>
+<body>
+  <header>
+    <div class="topnav">
+        <a  href="\">Home</a>
+        <a href="t1">News</a>
+        <a href="t2">Contact</a>
+        <a href="t3">About</a>
+        <a href="add">Add</a>
+        <a href="subtract">Subtract</a>
+        <a href="divide">Divide</a>
+        <a href="multiplay">Multiplay</a>
+      </div>
+      <center>
+        <h1>{{ title }}</h1>
+      </center>
+      
+  </header>
+  <div id="main">
+  {% block content %}
+
+        
+  
+    <!-- Center Section Start -->
+    <article>Article</article>
+    <!-- Center Section End -->
+
+
+
+
+    <!-- Left Section Start -->
+    <nav>Nav
+        
+    </nav>
+    <!-- Left Section End -->
+
+
+    <!-- Right Section Start -->
+    <aside>Aside
+        
+    </aside>
+    <!-- Right Section End -->
+  
+  
+ 
+  
+  {% endblock %}
+</div>
+  <!-- Footer Section Start -->
+  <footer>Footer</footer>
+  <!-- Footer Section End -->
+<script type="text/javascript">
+  changelit(document.title);
+
+</script>
+</body>
+</html>
