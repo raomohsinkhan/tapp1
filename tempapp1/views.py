@@ -18,7 +18,6 @@ def t1(request):
 	dests = Customers.objects.all()
 	return render(request,'news.html',{"title":"Customers", "dests":dests})
 
-
 def products(request):
 	dests = Products.objects.all()
 	return render(request,'products.html',{"title":"Products", "dests":dests})

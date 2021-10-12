@@ -17,4 +17,5 @@ urlpatterns = [
     path('savepi', views.savepi,name='savepi'),
     path('saveci', views.saveci,name='saveci'),
     path('products', views.products,name='products'),
+    
 ]

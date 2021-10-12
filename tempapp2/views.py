@@ -43,3 +43,6 @@ def t2(request):
 
 def t3(request):
 	return HttpResponse("Tempapp2: This is a t3 page.")
+
+
+
