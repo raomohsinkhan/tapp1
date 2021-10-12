@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+    <article>
+
+        <h1>This is a Product Insert form.</h1>
+    <form action="savepi">
+        <table>
+            <tr>
+                <td>Product Name</td><td><input type="text" name="pname" /></td>
+            </tr>
+            <tr>
+                <td>Unit Price</td><td><input type="text" name="unitprice" /></td>
+            </tr>
+            <tr>
+                <td></td><td><input type="submit" /></td>
+            </tr>
+        </table>
+    </form>
+
+    </article>
+    <nav>Nav
+        
+    </nav>
+    <aside>Aside
+
+    </aside>
+
+{% endblock %}

@@ -11,6 +11,9 @@ def home(request):
 def ci(request):
 	return render(request,'ci.html',{"title":"News"})
 
+def pi(request):
+	return render(request,'pi.html',{"title":"Products"})
+
 def t1(request):
 	dests = Customers.objects.all()
 	return render(request,'news.html',{"title":"News", "dests":dests})
@@ -26,6 +29,17 @@ def t2(request):
 
 def t3(request):
 	return render(request,'about.html',{"title":"About"})
+
+def savepi(request):
+	pname = request.GET['pname']
+	unitprice = request.GET['unitprice']
+	p1 = Products()
+	p1.pname = pname
+	p1.unitprice = unitprice
+	p1.save()
+	dests = Products.objects.all()
+	return render(request,'products.html',{"title":"Products", "dests":dests})
+
 
 
 def saveci(request):
