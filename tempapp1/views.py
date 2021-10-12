@@ -1,5 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+
+from .models import Customers
 # Create your views here.
 
 
@@ -8,7 +10,8 @@ def home(request):
 
 
 def t1(request):
-	return render(request,'news.html',{"title":"News"})
+	dests = Customers.objects.all()
+	return render(request,'news.html',{"title":"News", "dests":dests})
 
 def t2(request):
 	return render(request,'contact.html',{"title":"Contact"})

@@ -2,19 +2,41 @@
 
 
 {% block content %}
-    <article>Article
+    <article>
         <h1>This is a Center Section.</h1>
-        <h1>I am in Center Section</h1>
+        <h1>Customer Information</h1>
+        <hr>
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Address</th>
+                <th>Gender</th>
+            </tr>
+            {% for mydest in dests %}
+            <tr>
+                <td>{{ mydest.id }}</td>
+                <td>{{ mydest.fname }} {{ mydest.lname }}</td>
+                <td>{{ mydest.address }} {{ mydest.city }} {{ mydest.country }}</td>
+                <td>{{ mydest.gender }}</td>
+
+            </tr>
+            {% endfor %}
+        </table>
+
+
+
+
     </article>
     <nav>Nav
         <table>
             <tr>
-                <td><h1>this is a very good website</h1></td>
-                <td><p>I am in love with this.</p></td>
-                <td><h3>I'll use this templates in my web developemnt projects</h3></td>
+                <td><h1>I am Rao Mohsin</h1></td>
+                <td><p></p></td>
+                <td><h3></h3></td>
             </tr>
             <tr>
-                <td>I think this is a very nice website</td>
+                <td></td>
             </tr>
         </table>
     </nav>
@@ -23,12 +45,12 @@
         <h4>I am a good boy. too</h4>
         <table>
             <tr>
-                <td><h1>this is a very good website</h1></td>
-                <td><p>I am in love with this.</p></td>
-                <td><h3>I'll use this templates in my web developemnt projects</h3></td>
+                <td><h1></h1></td>
+                <td><p></p></td>
+                <td><h3></h3></td>
             </tr>
             <tr>
-                <td>I think this is a very nice website</td>
+                <td></td>
             </tr>
         </table>
     </aside>
