@@ -8,6 +8,22 @@ from django.contrib.auth.models import User, auth
 def home(request):
 	return HttpResponse("Tempapp2: Hello World.")
 
+def welcome(request):
+	return render(request,'ac_welcome.html')
+def register(request):
+	return render(request,'ac_register.html')
+def helpme(request):
+	return render(request,'ac_helpme.html')
+def contactus(request):
+	return render(request,'ac_contactus.html')
+def forgotpassword(request):
+	return render(request,'ac_forgotpassword.html')
+def backtohome(request):
+	return redirect('/')
+
+
+
+
 
 def t1(request):
 	if request.method == 'POST':
@@ -29,14 +45,12 @@ def t1(request):
 				user = User.objects.create_user(email=email,password=password1,first_name=fname,last_name=lname,username=username)
 				user.save()
 				messages.info(request,'user created successfully')
-				return redirect('/')
-			return redirect('/')
+				return redirect('login')
 		else:
 			messages.info(request,'Password not matched...')
 			return redirect('t1')
-		return redirect('/')
 	else:
-		return render(request,'register.html',{"title":"Register", "dests":"dests"})
+		return render(request,'ac_register.html',{"title":"Register", "dests":"dests"})
 
 def t2(request):
 	return HttpResponse("Tempapp2: This is a t2 page.")
@@ -44,5 +58,23 @@ def t2(request):
 def t3(request):
 	return HttpResponse("Tempapp2: This is a t3 page.")
 
+def login(request):
+	if request.method == 'POST':
+		username = request.POST['username']
+		password = request.POST['password']
+		user = auth.authenticate(username=username,password=password)
+		if user is not None:
+			#successfully login
+			auth.login(request,user)
+			return redirect('/')
+		else:
+			messages.info(request,'invalid credentials')
+			return redirect('login')
+	else:
+		return render(request,'ac_login.html')
 
+
+def logout(request):
+	auth.logout(request)
+	return redirect('/')
 

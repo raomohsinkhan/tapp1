@@ -149,7 +149,14 @@ header, footer, article, nav, aside {
         <a href="divide">Divide</a>
         <a href="multiplay">Multiplay</a>
         <a href="products">Products</a>
-        <a href="tempapp2/t1">Register</a>
+        {% if user.is_authenticated %}
+          <p>Hello {{user.first_name}}</p>
+          <a href="tempapp2/logout">logout</a>
+        {% else %}
+          <a href="tempapp2/welcome">Register</a>
+          <a href="tempapp2/login">Login</a>
+        {% endif %}
+
       </div>
       <center>
         <h1>{{ title }}</h1>

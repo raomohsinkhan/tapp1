@@ -1,0 +1,98 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>The Base Page for Account Application</title> 
+    <style>
+      *{
+        margin: 0px;
+        padding: 0px;
+      }
+      ul {
+        list-style-type: number;
+        margin-left: 20px;
+        margin-top: 0px;
+        margin-bottom: 0px;
+        margin-right: 0px;
+        padding-left: 45px;
+        padding-top:20px;
+        padding-bottom: 5px;
+        padding-right: 12px;
+        display: inline;
+        background-color: rgb(56, 123, 235);
+        position: fixed;
+
+        
+        overflow: auto;
+        font-size:40px;
+      }
+      
+      li a {
+        display: block;
+        color: rgb(255, 255, 200);
+        padding-left: 30px;
+        padding-right: 20px;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        text-decoration: none;
+      }
+      
+      li a.active {
+        background-color: #04AA6D;
+        color: rgb(250, 250, 250);
+      }
+      
+      
+      li a:hover:not(.active) {
+        background-color: rgb(229, 251, 31);
+        color: rgb(0, 0, 0);
+      }
+      .maincontent {
+      	margin-left:450px;
+        margin-top:20px;
+      	padding-top:0px;
+        height:10px;
+      }
+      form{
+        background-color: rgb(229, 251, 31);
+        padding-bottom: 10px;
+        padding-top: 20px;
+        margin-top: 0px;
+        margin-right: 280px;
+        margin-bottom: 20px;
+      }
+      form h1 {
+        margin-left: 35px;
+      }
+      input {
+        padding-left: 20px;
+        padding-right: 0px;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        font-size: 30px;
+        margin-left: 70px;
+        margin-top: 0px;
+        margin-bottom: 20px;
+      }
+      </style>
+  
+</head>
+  <body>
+
+    <ul>
+      <li><a class="active"  href="welcome">Home</a></li>
+      <li><a href="register">Register</a></li>
+      <li><a href="login">Login</a></li>
+      <li><a href="forgotpassword">Reset Password</a></li>
+      <li><a href="contactus">Contact Us</a></li>
+      <li><a href="helpme">Help Me</a></li>
+      <li><a href="backtohome">Back To Home</a></li>
+    </ul>
+
+    <div class="maincontent">
+        {% block content %}
+
+        {% endblock %}
+    </div>
+  </body>
+</html>

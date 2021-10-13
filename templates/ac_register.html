@@ -1,0 +1,24 @@
+{% extends 'ac_base.html' %}
+
+
+{% block content %}
+    
+    <form action="t1" method="POST" >
+        <h1>This is a User Registeration form.</h1>     
+        {% csrf_token %}      
+        <input type="text" name="fname" placeholder="First Name" autocomplete="off" /><br>
+        <input type="text" name="lname" placeholder="Last Name" autocomplete="off" /><br>
+        <input type="text" name="username" placeholder="User Name" autocomplete="off" /><br>
+        <input type="email" name="email" placeholder="Email" autocomplete="off" /><br>
+        <input type="password" name="password1" placeholder="Password" autocomplete="off" /><br>
+        <input type="password" name="password2" placeholder="Confirm Password" autocomplete="off"/><br>
+        <input type="submit" /><br>
+    </form>
+
+    <div>
+        {% for message in messages %}
+        <h3> {{ message }}</h3>
+        {% endfor %}
+    </div>
+
+{% endblock %}
