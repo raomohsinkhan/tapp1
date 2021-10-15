@@ -16,5 +16,6 @@ urlpatterns = [
     path('contactus', views.contactus,name='contactus'),
     path('backtohome', views.backtohome,name='backtohome'),
     path('forgotpassword', views.forgotpassword,name='forgotpassword'),
+    path('se4forgotpassword',views.se4forgotpassword,name='se4forgotpassword')
     #path('register',views.register,name='register')
 ]

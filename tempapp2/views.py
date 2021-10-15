@@ -2,6 +2,8 @@ from django.contrib import messages
 from django.shortcuts import redirect, render
 from django.http import HttpResponse
 from django.contrib.auth.models import User, auth
+from django.core.mail import send_mail
+from django.conf import settings
 # Create your views here.
 
 
@@ -21,8 +23,16 @@ def forgotpassword(request):
 def backtohome(request):
 	return redirect('/')
 
-
-
+def se4forgotpassword(request):
+	if request.method == 'POST':
+		a = request.POST['email']
+		subject = 'Reset Password Request'
+		message = 'Password Forgot, send password reset link. Thank you.'
+		send_mail(subject, message, settings.EMAIL_HOST_USER,[a], fail_silently=False)
+		return render(request,'ac_forgotpassword.html',{"message":"Thank you, we have recived your message"})
+	else:
+		return render(request,'ac_forgotpassword.html')
+		
 
 
 def t1(request):

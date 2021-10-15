@@ -17,5 +17,7 @@ urlpatterns = [
     path('savepi', views.savepi,name='savepi'),
     path('saveci', views.saveci,name='saveci'),
     path('products', views.products,name='products'),
+    path('export2csv', views.export2csv,name='export2csv'),
+    path('exproducts', views.exproducts,name='exproducts'),
     
 ]

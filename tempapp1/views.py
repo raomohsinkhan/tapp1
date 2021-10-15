@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-
+import csv
 from .models import Customers,Products
 # Create your views here.
 
@@ -47,6 +47,7 @@ def saveci(request):
 	address = request.GET['address']
 	city = request.GET['city']
 	country = request.GET['country']
+	age = request.GET['age']
 	gender = request.GET['gender']
 	c1 = Customers()
 	c1.fname = fname
@@ -54,6 +55,7 @@ def saveci(request):
 	c1.address = address
 	c1.city = city
 	c1.country = country
+	c1.age = age
 	c1.gender = gender
 	c1.save()
 	dests = Customers.objects.all()
@@ -74,5 +76,29 @@ def multiplay(request):
 def tt2(request):
 	return render(request,'contact.html',{"title":"Contact"})
 
+#Exporting Customers Information into CSV File Format
+def export2csv(request):
+	a = 'i am rao mohsin'
+	c = Customers.objects.all()
+	response = HttpResponse('')
+	response['Content-Disposition'] = 'attachment; filename=abc.csv'
+	writer = csv.writer(response)
+	writer.writerow(['fname','lname','address','city','country','age','gender'])
+	customer_fields = c.values_list('fname','lname','address','city','country','age','gender')
+	for profile in customer_fields:
+		writer.writerow(profile)
+	return response
+
+#Exporting Product Information into CSV File Format
+def exproducts(request):
+	p = Products.objects.all()
+	response = HttpResponse('')
+	response['Content-Disposition'] = 'attachment; filename=products.csv'
+	writer = csv.writer(response)
+	writer.writerow(['pname','unitprice','added'])
+	product_fields = p.values_list('pname','unitprice','added')
+	for profile in product_fields:
+		writer.writerow(profile)
+	return response
 
 

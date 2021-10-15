@@ -127,3 +127,19 @@ STATIC_ROOT = os.path.join(BASE_DIR,'assets')
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.google.com'
+EMAIL_PORT = '587'
+EMAIL_HOST_USER = 'kraomohsin75@gmail.com'
+EMAIL_HOST_PASSWORD = 'abbusys105'
+EMAIL_USE_TLS = True 
+#EMAIL_USE_SSL = True
+# smtp.gmail.com
+# Requires SSL: Yes
+# Requires TLS: Yes (if available)
+# Requires Authentication: Yes
+# Port for SSL: 465
+# Port for TLS/STARTTLS: 587
+
+
